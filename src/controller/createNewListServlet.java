@@ -39,16 +39,7 @@ public class createNewListServlet extends HttpServlet {
 		String listName = request.getParameter("listName");
 		System.out.println("List Name: " + listName);
 
-		String month = request.getParameter("month");
-		String day = request.getParameter("day");
-		String year = request.getParameter("year");
-		String UserName = request.getParameter("UserName");
-		LocalDate ld;
-		try {
-			ld = LocalDate.of(Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(day));
-		} catch (NumberFormatException ex) {
-			ld = LocalDate.now();
-		}
+		String userName = request.getParameter("userName");
 
 		String[] selectedItems = request.getParameterValues("allItemsToAdd");
 		List<ListItem> selectedItemsInList = new ArrayList<ListItem>();
@@ -61,7 +52,7 @@ public class createNewListServlet extends HttpServlet {
 			}
 		}
 
-		User user = new User(UserName);
+		User user = new User(userName);
 		ListDetails sld = new ListDetails(listName, user);
 		sld.setListOfItems(selectedItemsInList);
 		ListDetailsHelper slh = new ListDetailsHelper();

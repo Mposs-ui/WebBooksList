@@ -11,8 +11,7 @@ import model.ListItem;
 
 public class ListItemHelper {
 
-	static EntityManagerFactory	emfactory =	
-			Persistence.createEntityManagerFactory("ConsoleBooksList");
+	static EntityManagerFactory	emfactory = Persistence.createEntityManagerFactory("ConsoleBooksList");
 		
 	public void insertItem(ListItem li) {
 		EntityManager em = emfactory.createEntityManager();
@@ -20,6 +19,12 @@ public class ListItemHelper {
 		em.persist(li);
 		em.getTransaction().commit();
 		em.close();
+	}
+	
+	public List<ListItem> showAllItems() {
+		EntityManager em = emfactory.createEntityManager();
+		List<ListItem> allItems = em.createQuery("SELECT i FROM ListItem i").getResultList();
+		return allItems;
 	}
 		
 	public void cleanUp() {
@@ -68,12 +73,6 @@ public class ListItemHelper {
 		return	foundItems;
 	}
 
-	public List<ListItem> showAllItems() {
-		// TODO Auto-generated method stub
-		EntityManager em = emfactory.createEntityManager();
-		List<ListItem>allItems = em.createQuery("SELECT i FROM ListItem	i").getResultList();
-		return	allItems;
-	}
 	
 	public void deleteItem(ListItem toDelete) {
 		EntityManager em = emfactory.createEntityManager();

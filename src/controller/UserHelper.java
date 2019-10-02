@@ -11,7 +11,7 @@ import model.ListItem;
 import model.User;
 
 public class UserHelper {
-	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("UserMediaList");
+	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("ConsoleBooksList");
 	
 	public void insertUser(User s) {
 		EntityManager em = emfactory.createEntityManager();

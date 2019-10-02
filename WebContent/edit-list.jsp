@@ -10,7 +10,7 @@
 <body>
 <form action = "editExistingListServlet" method="post">
 List Name: <input type ="text" name = "listName" value="${listToEdit.listName}"><br />
-User's Name: <input type = "text" name = "userName" value="${listToEdit.user.useName}"><br />
+User's Name: <input type = "text" name = "userName" value="${listToEdit.user.userName}"><br />
 <input type = "hidden" name = "id" value="${listToEdit.id}">
 Current Items:<br />
 <select name="currentItems" multiple size="6">

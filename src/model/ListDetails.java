@@ -27,7 +27,7 @@ public class ListDetails {
 	@ManyToOne
 	@JoinColumn(name="USER_ID")
 	private User user;
-	@OneToMany(cascade=CascadeType.MERGE, fetch=FetchType.EAGER)
+	@OneToMany(cascade=CascadeType.PERSIST.ALL, fetch=FetchType.EAGER)
 	@JoinTable
 	  (
 	      name="books_on_list",

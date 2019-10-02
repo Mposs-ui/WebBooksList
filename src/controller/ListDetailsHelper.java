@@ -11,7 +11,7 @@ import model.ListDetails;
 import model.ListItem;
 
 public class ListDetailsHelper {
-	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("UserMediaList");
+	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("ConsoleBooksList");
 
 	public void insertNewListDetails(ListDetails s) {
 		EntityManager em = emfactory.createEntityManager();
