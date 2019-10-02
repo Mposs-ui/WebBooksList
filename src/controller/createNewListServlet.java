@@ -55,7 +55,7 @@ public class createNewListServlet extends HttpServlet {
 		User user = new User(userName);
 		UserHelper uh = new UserHelper();
 		uh.insertUser(user);
-		
+
 		ListDetails sld = new ListDetails(listName, user);
 		sld.setListOfItems(selectedItemsInList);
 		ListDetailsHelper slh = new ListDetailsHelper();
